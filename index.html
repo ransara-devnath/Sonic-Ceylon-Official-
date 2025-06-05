@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicCeylon Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Animated Welcome Message -->
+    <h1 class="rgb-animation">Welcome to SonicCeylon Music Website 🎵</h1>
+    <p class="dev-name">Developed by <span class="rgb-dev">Ransara Devnath</span></p>
+
+    <!-- Search Bar -->
+    <input type="text" id="searchInput" placeholder="Search for songs...">
+    <button onclick="searchSong()">🔍 Search</button>
+
+    <!-- Upload Form -->
+    <input type="file" id="songInput" accept="audio/mp3">
+    <input type="file" id="thumbnailInput" accept="image/*">
+    <button onclick="uploadSong()">⬆️ Upload Song</button>
+
+    <!-- Display Uploaded Songs -->
+    <div id="songList"></div>
+
+    <!-- Contact Us Link -->
+    <a href="contact.html" class="contact-link">📩 Contact Us</a>
+
+    <script src="script.js"></script>
+</body>
+</html>

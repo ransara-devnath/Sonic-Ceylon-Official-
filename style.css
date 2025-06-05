@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #161B22;
+    color: #fff;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+/* Button Styling */
+button {
+    margin-top: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0D1117;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #0D1117;
+    color: #C9D1D9;
+}
+
+/* RGB Welcome Animation */
+.rgb-animation {
+    font-size: 28px;
+    font-weight: bold;
+    animation: rgbEffect 3s infinite alternate;
+}
+
+/* RGB Developer Name Animation */
+.rgb-dev {
+    font-weight: bold;
+    font-size: 22px;
+    animation: rgbEffect 3s infinite alternate;
+}
+
+/* Keyframe Animation */
+@keyframes rgbEffect {
+    0% { color: red;}
+    25% { color: blue;}
+    50% { color: green;}
+    75% { color: yellow;}
+    100% { color: purple;}
+}
+
+/* Floating Clock */
+.clock {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Contact Page Theme Styling */
+.contact-container {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-logo {
+    width: 50px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.contact-logo:hover {
+    opacity: 0.8;
+}
