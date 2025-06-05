@@ -8,25 +8,31 @@
 </head>
 <body>
 
-    <!-- Typing Text Animation -->
-    <h1 id="typing-text"></h1>
+    <!-- Background Blur Wrapper -->
+    <div class="background-blur"></div>
 
-    <!-- Search Bar -->
-    <input type="text" id="searchInput" placeholder="Search for songs...">
-    <button onclick="searchSong()">🔍 Search</button>
+    <!-- Main Content Wrapper -->
+    <div class="main-content">
+        <!-- Typing Text Animation -->
+        <h1 id="typing-text"></h1>
 
-    <!-- Upload Form -->
-    <input type="file" id="songInput" accept="audio/mp3">
-    <input type="file" id="thumbnailInput" accept="image/*">
-    <button onclick="uploadSong()" class="upload-animation">⬆️ Upload Song</button>
+        <!-- Search Bar -->
+        <input type="text" id="searchInput" placeholder="Search for songs...">
+        <button onclick="searchSong()">🔍 Search</button>
 
-    <!-- Display Uploaded Songs -->
-    <div id="songList"></div>
+        <!-- Upload Form -->
+        <input type="file" id="songInput" accept="audio/mp3">
+        <input type="file" id="thumbnailInput" accept="image/*">
+        <button onclick="uploadSong()" class="upload-animation">⬆️ Upload Song</button>
 
-    <!-- Contact Us Link -->
-    <a href="contact.html" class="contact-link">📩 Contact Us</a>
+        <!-- Display Uploaded Songs -->
+        <div id="songList"></div>
+
+        <!-- Contact Us Link -->
+        <a href="contact.html" class="contact-link">📩 Contact Us</a>
+    </div>
 
     <script src="script.js"></script>
 </body>
-        </html>
-    
+    </html>
+        
