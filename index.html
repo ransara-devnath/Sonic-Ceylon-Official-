@@ -4,186 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ransara Devnath's World</title>
-    <style>
-        /* GitHub Dark Mode Theme */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #0D1117;
-            color: #C9D1D9;
-            margin: 0;
-            padding: 20px;
-            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-        /* Animated Header */
-.header {
-            padding: 30px;
-            background: linear-gradient(45deg, #238636, #58A6FF);
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 10px;
-            animation: slideIn 1.5s ease-in-out;
-}
-
-        @keyframes slideIn {
-            0% { opacity: 0; transform: translateY(-30px);}
-            100% { opacity: 1; transform: translateY(0);}
-}
-
-        /* Developer Profile */
-.profile {
-            margin-top: 20px;
-}
-
-        /* Loading Animation */
-        #loader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: #0D1117;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-}
-
-.spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #fff;
-            border-top-color: #58A6FF;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-}
-
-        @keyframes spin {
-            0% { transform: rotate(0deg);}
-            100% { transform: rotate(360deg);}
-}
-
-        /* Page Transition Animation */
-.page-transition {
-            opacity: 0;
-            transform: translateY(20px);
-}
-
-.loaded.page-transition {
-            opacity: 1;
-            transform: translateY(0);
-}
-
-        /* Developer Image */
-.developer-image {
-            width: 150px;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0px 0px 10px rgba(255,255,255,0.3);
-            margin-bottom: 15px;
-}
-
-        /* RGB Animated Name */
-.name {
-            font-size: 36px;
-            font-weight: bold;
-            text-transform: uppercase;
-            animation: rgbColor 2s infinite alternate;
-}
-
-        @keyframes rgbColor {
-            0% { color: #ff0000;}
-            25% { color: #00ff00;}
-            50% { color: #0000ff;}
-            75% { color: #ffff00;}
-            100% { color: #ff00ff;}
-}
-
-        /* Contact Section */
-.contact {
-            margin-top: 20px;
-}
-
-        /* Footer */
-.footer {
-            margin-top: 20px;
-            font-size: 12px;
-}
-
-        /* Image Gallery */
-.images {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-}
-
-.images img {
-            width: 100px;
-            height: 100px;
-            margin: 0 5px;
-}
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-transition">
 
-    <!-- Loading Screen -->
-    <div id="loader">
-        <div class="spinner"></div>
-    </div>
-
-    <!-- Welcome Header -->
+    <!-- Header -->
     <div class="header">
-        <h1>✨ WELCOME TO RANSARA DEVNATH'S WORLD! ✨</h1>
+        <h1>✨ Welcome to Ransara Devnath's World! ✨</h1>
         <p>Explore and connect with me for amazing projects, creative ideas, and tech innovations. Let's build something awesome together! 🚀</p>
     </div>
 
-    <!-- Developer Profile -->
-    <div class="profile">
-        <img src="https://raw.githubusercontent.com/ransara-devnath/MANU-MDV8/refs/heads/main/assets/e4173d05-5957-4d9a-b3f2-87b41ef4a495.jpeg"
-             alt="Developer Image" class="developer-image">
-        <div class="name">Ransara Devnath</div>
-        <p>📞 0726880784</p>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="contact">
-        <h3>📞 Contact Developer</h3>
-        <p>
-            <a href="https://wa.me/message/XQZHYHBQ3E47I1">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" alt="WhatsApp Logo">
-                Chat on WhatsApp
-            </a>
-        </p>
-        <p>
-            <a href="https://github.com/ransara-devnath">
-                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="30" alt="GitHub Logo">
-                Visit GitHub Profile
-            </a>
-        </p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>© 2025 Ransara Devnath | All Rights Reserved</p>
-    </div>
-
-    <!-- Image Gallery -->
-    <div class="images">
-        <img src="image1.jpg" alt="Landscape 1">
-        <img src="image2.jpg" alt="Landscape 2">
-        <img src="image3.jpg" alt="Landscape 3">
-        <img src="image4.jpg" alt="Landscape 4">
-        <img src="image5.jpg" alt="Landscape 5">
-    </div>
-
-    <!-- JavaScript for Page Load Animation -->
     <script>
         window.onload = function() {
-            document.getElementById("loader").style.display = "none"; // Hide loader when page loads
-            document.body.classList.add("loaded"); // Enable transition effect
+            document.body.classList.add("loaded"); // Enable smooth page transition
 };
     </script>
 
 </body>
 </html>
- 
