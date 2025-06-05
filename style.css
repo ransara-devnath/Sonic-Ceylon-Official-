@@ -1,89 +1,45 @@
-/* Page Background & Font */
-body {
-    font-family: Arial, sans-serif;
+.language-select {
+    margin: 20px auto;
     text-align: center;
-    background-color: #0D1117;
-    color: #C9D1D9;
-    margin: 0;
-    padding: 20px;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-/* Animated Header */
-.header {
-    padding: 20px;
-    background: linear-gradient(45deg, #238636, #58A6FF);
-    color: white;
+select {
+    padding: 8px 12px;
     font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    animation: slideIn 1.5s ease-in-out;
+    background: #238636;
+    color: white;
+    border-radius: 5px;
+    border: none;
 }
 
-@keyframes slideIn {
-    0% { opacity: 0; transform: translateY(-30px);}
-    100% { opacity: 1; transform: translateY(0);}
-}
-
-/* Top Buttons */
-.top-buttons {
+/* Menu Styling */
+.menu {
+    display: flex;
+    justify-content: center;
     margin: 20px 0;
 }
 
-.action-button {
-    padding: 10px 14px;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
+.menu button {
     background: linear-gradient(45deg, #238636, #58A6FF);
-    text-decoration: none;
-    border-radius: 6px;
-    transition: 0.3s;
+    color: white;
+    font-size: 14px;
+    padding: 10px 16px;
     border: none;
-    cursor: pointer;
-}
-
-.action-button:hover {
-    background: linear-gradient(45deg, #58A6FF, #238636);
-    box-shadow: 0px 0px 8px rgba(255,255,255,0.3);
-}
-
-/* Floating Contact Us Button */
-.floating-button {
-    position: fixed;
-    right: -200px; /* Hide initially */
-    bottom: 20px;
-    transition: right 0.5s ease-in-out;
-}
-
-.floating-button.show {
-    right: 20px; /* Show when toggled */
-}
-
-.contact-button {
-    display: inline-block;
-    padding: 12px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    color: white;
-    background: linear-gradient(45deg, #238636, #58A6FF);
-    text-decoration: none;
     border-radius: 8px;
+    cursor: pointer;
     transition: 0.3s;
+    margin: 5px;
 }
 
-.contact-button:hover {
-    background: linear-gradient(45deg, #58A6FF, #238636);
+.menu button:hover {
+    transform: scale(1.1);
+}
+
+/* Page Content */
+.page-content {
+    text-align: center;
+    padding: 20px;
+    background: #161B22;
+    color: #C9D1D9;border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(255,255,255,0.3);
-}
-
-/* Page Transition Animation */
-.page-transition {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.loaded.page-transition {
-    opacity: 1;
-    transform: translateY(0);
     }
