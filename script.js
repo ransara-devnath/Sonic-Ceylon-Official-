@@ -22,7 +22,7 @@ function uploadSong() {
                     <audio controls>
                         <source src="${data.songPath}" type="audio/mp3">
                     </audio>
-                   <button onclick="downloadSong('${data.songPath}')">⬇️ Download</button>
+                    <button onclick="downloadSong('${data.songPath}')">⬇️ Download</button>
                 </div>
             `;
 }
