@@ -8,28 +8,54 @@
 </head>
 <body class="page-transition">
 
+    <!-- Language Selection -->
+    <div class="language-select">
+        <label for="language">🌍 Choose Language:</label>
+        <select id="language" onchange="translatePage()">
+            <option value="en">English</option>
+            <option value="si">සිංහල (Sinhala)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+        </select>
+    </div>
+
     <!-- Header -->
     <div class="header">
-        <h1>✨ Ransara Devnath's World! ✨</h1>
-        <p>Let's create and innovate together! 🚀</p>
+        <h1 id="welcome">✨ Welcome to Ransara Devnath's World! ✨</h1>
+        <p id="subtitle">Let's create and innovate together! 🚀</p>
     </div>
 
-    <!-- Top Buttons -->
-    <div class="top-buttons">
-        <button onclick="toggleContact()" class="action-button">🔹 Button 1</button>
-        <button onclick="toggleContact()" class="action-button">🔹 Button 2</button>
-        <button onclick="toggleContact()" class="action-button">🔹 Button 3</button>
+    <!-- Navigation Menu -->
+    <div class="menu">
+        <button onclick="showPage('home')">🏠 Home</button>
+        <button onclick="showPage('about')">ℹ️ About Us</button>
+        <button onclick="showPage('contact')">📩 Contact Us</button>
     </div>
 
-    <!-- Floating Contact Us Button -->
-    <div id="contact-button" class="floating-button">
-        <a href="contact.html" class="contact-button">📩 Contact Us</a>
-    </div>
+    <!-- Page Content -->
+    <div id="content-area"></div>
 
     <script>
-        function toggleContact() {
-            var contactButton = document.getElementById("contact-button");
-            contactButton.classList.toggle("show");
+        function translatePage() {
+            var lang = document.getElementById("language").value;
+
+            var translations = {
+                "en": { "welcome": "✨ Welcome to Ransara Devnath's World! ✨", "subtitle": "Let's create and innovate together! 🚀"},
+                "si": { "welcome": "✨ රන්සර දෙව්නාත්ගේ ලෝකයට පිළිගනිමු! ✨", "subtitle": "එකතු වී අළුත් දේවල් නිර්මාණය කරමු! 🚀"},
+                "ta": { "welcome": "✨ ரன்சரா தேவ்நாத் உலகிற்கு வரவேற்கிறோம்! ✨", "subtitle": "நாம் ஒன்றாக உருவாக்கி புதுமைகள் செய்யலாம்! 🚀"}
+};
+
+            document.getElementById("welcome").innerText = translations[lang].welcome;
+            document.getElementById("subtitle").innerText = translations[lang].subtitle;
+}
+
+        function showPage(page) {
+            fetch('page-content.html')
+.then(response => response.text())
+.then(data => {
+                    document.getElementById('content-area').innerHTML = data;
+                    document.querySelectorAll('#content-area div').forEach(div => div.style.display = "none");
+                    document.getElementById(page).style.display = "block";
+});
 }
 
         window.onload = function() {
@@ -38,4 +64,4 @@
     </script>
 
 </body>
-</html>
+    </html>
