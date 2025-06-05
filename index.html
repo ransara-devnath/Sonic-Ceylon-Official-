@@ -8,9 +8,8 @@
 </head>
 <body>
 
-    <!-- Animated Welcome Message -->
-    <h1 class="rgb-animation">Welcome to SonicCeylon Music Website 🎵</h1>
-    <p class="dev-name">Developed by <span class="rgb-dev">Ransara Devnath</span></p>
+    <!-- Typing Text Animation -->
+    <h1 id="typing-text"></h1>
 
     <!-- Search Bar -->
     <input type="text" id="searchInput" placeholder="Search for songs...">
@@ -19,7 +18,7 @@
     <!-- Upload Form -->
     <input type="file" id="songInput" accept="audio/mp3">
     <input type="file" id="thumbnailInput" accept="image/*">
-    <button onclick="uploadSong()">⬆️ Upload Song</button>
+    <button onclick="uploadSong()" class="upload-animation">⬆️ Upload Song</button>
 
     <!-- Display Uploaded Songs -->
     <div id="songList"></div>
@@ -29,4 +28,5 @@
 
     <script src="script.js"></script>
 </body>
-</html>
+        </html>
+    
