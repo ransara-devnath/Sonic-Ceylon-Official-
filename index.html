@@ -13,82 +13,47 @@
         <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
     </div>
 
-    <!-- Language Selection -->
-    <div class="language-select">
-        <label for="language">🌍 Choose Language:</label>
-        <select id="language" onchange="translatePage()">
-            <option value="en">English</option>
-            <option value="si">සිංහල (Sinhala)</option>
-            <option value="ta">தமிழ் (Tamil)</option>
-        </select>
-    </div>
-
     <!-- Header -->
-    <div class="header">
+    <div class="header rgb-animation">
         <h1 id="welcome">Welcome to My Website!</h1>
         <p id="subtitle">Thank you for visiting. Hope you enjoy your time here 😊</p>
-        <img src="https://raw.githubusercontent.com/ransara-devnath/SU/refs/heads/main/.github/workflows/e4173d05-5957-4d9a-b3f2-87b41ef4a495.jpeg" class="developer-image" alt="Developer">
     </div>
 
-    <!-- Navigation Menu -->
-    <div class="menu">
-        <button onclick="showPage('home')">🏠 Home</button>
-        <button onclick="showPage('about')">ℹ️ About Us</button>
-        <button onclick="showPage('contact')">📩 Contact Us</button>
-    </div>
-
-    <!-- Page Content -->
-    <div id="content-area"></div>
-
-    <!-- Contact Icons -->
-    <div class="contact-icons">
-        <a href="https://wa.me/message/XQZHYHBQ3E47I1" class="contact-icon">
-            <img src="whatsapp-logo.svg" alt="WhatsApp">
-        </a>
-        <a href="https://github.com/ransara-devnath" class="contact-icon">
-            <img src="github-logo.svg" alt="GitHub">
-        </a>
-        <a href="#" onclick="sendGmail()" class="contact-icon">
-            <img src="gmail-logo.svg" alt="Gmail">
-        </a>
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h2>📩 Contact Us</h2>
+        <div class="contact-icons">
+            <a href="https://wa.me/message/XQZHYHBQ3E47I1" target="_blank" class="contact-icon">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+            <a href="https://github.com/ransara-devnath" target="_blank" class="contact-icon">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub">
+            </a>
+            <a href="#" onclick="sendGmail()" class="contact-icon">
+                <img src="https://raw.githubusercontent.com/ransara-devnath/SU/refs/heads/main/.github/workflows/vecteezy_google-mail-gmail-icon-logo-symbol_22484516.png" alt="Gmail">
+            </a>
+        </div>
     </div>
 
     <script>
-        function translatePage() {
-            var lang = document.getElementById("language").value;
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            document.querySelector(".contact-section").classList.toggle("dark-theme");
 
-            var translations = {
-                "en": { "welcome": "Welcome to My Website!", "subtitle": "Thank you for visiting. Hope you enjoy your time here 😊"},
-                "si": { "welcome": "ඔයාගේ වෙබ් අඩවියට පිළිගනිමු!", "subtitle": "ඔයාගේ ගමනේ වේලාව සැලකීමෙන් ගත කරන්න 😊"},
-                "ta": { "welcome": "என் இணையதளத்திற்கு வரவேற்கிறேன்!", "subtitle": "உங்கள் நேரத்தை சிறப்பாக கழிக்கட்டும் 😊"}
-};
-
-            document.getElementById("welcome").innerText = translations[lang].welcome;
-            document.getElementById("subtitle").innerText = translations[lang].subtitle;
+            if (document.body.classList.contains("dark-mode")) {
+                document.querySelector("body").setAttribute("data-theme", "dark");
+} else {
+                document.querySelector("body").setAttribute("data-theme", "light");
 }
-
-        function showPage(page) {
-            fetch('page-content.html')
-.then(response => response.text())
-.then(data => {
-                    document.getElementById('content-area').innerHTML = data;
-                    document.querySelectorAll('#content-area div').forEach(div => div.style.display = "none");
-                    document.getElementById(page).style.display = "block";
-                    if (page === "contact") {
-                        window.scrollTo({ top: document.getElementById('contact').offsetTop, behavior: 'smooth'});
-}
-});
 }
 
         function sendGmail() {
-            let gmailError = "Hello, I encountered an issue on your site. Please assist!";
-            window.location.href = `mailto:ransaramax4@gmail.com?subject=Website Issue&body=${encodeURIComponent(gmailError)}`;
+            let message = "Hello, I encountered an issue on your site. Please assist!";
+            window.location.href = `mailto:ransaramax4@gmail.com?subject=Website Issue&body=${encodeURIComponent(message)}`;
 }
 
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-}window.onload = function() {
-            document.body.classList.add("loaded"); // Enable smooth page transition
+        window.onload = function() {
+            document.body.classList.add("loaded");
 };
     </script>
 
