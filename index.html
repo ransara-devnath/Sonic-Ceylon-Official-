@@ -3,10 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ransara Devnath's World</title>
+    <title>Welcome to My Website!</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="page-transition">
+
+    <!-- Dark Mode Toggle -->
+    <div class="dark-mode-toggle">
+        <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+    </div>
 
     <!-- Language Selection -->
     <div class="language-select">
@@ -20,8 +25,9 @@
 
     <!-- Header -->
     <div class="header">
-        <h1 id="welcome">✨ Welcome to Ransara Devnath's World! ✨</h1>
-        <p id="subtitle">Let's create and innovate together! 🚀</p>
+        <h1 id="welcome">Welcome to My Website!</h1>
+        <p id="subtitle">Thank you for visiting. Hope you enjoy your time here 😊</p>
+        <img src="https://raw.githubusercontent.com/ransara-devnath/SU/refs/heads/main/.github/workflows/e4173d05-5957-4d9a-b3f2-87b41ef4a495.jpeg" class="developer-image" alt="Developer">
     </div>
 
     <!-- Navigation Menu -->
@@ -34,14 +40,27 @@
     <!-- Page Content -->
     <div id="content-area"></div>
 
+    <!-- Contact Icons -->
+    <div class="contact-icons">
+        <a href="https://wa.me/message/XQZHYHBQ3E47I1" class="contact-icon">
+            <img src="whatsapp-logo.svg" alt="WhatsApp">
+        </a>
+        <a href="https://github.com/ransara-devnath" class="contact-icon">
+            <img src="github-logo.svg" alt="GitHub">
+        </a>
+        <a href="#" onclick="sendGmail()" class="contact-icon">
+            <img src="gmail-logo.svg" alt="Gmail">
+        </a>
+    </div>
+
     <script>
         function translatePage() {
             var lang = document.getElementById("language").value;
 
             var translations = {
-                "en": { "welcome": "✨ Welcome to Ransara Devnath's World! ✨", "subtitle": "Let's create and innovate together! 🚀"},
-                "si": { "welcome": "✨ රන්සර දෙව්නාත්ගේ ලෝකයට පිළිගනිමු! ✨", "subtitle": "එකතු වී අළුත් දේවල් නිර්මාණය කරමු! 🚀"},
-                "ta": { "welcome": "✨ ரன்சரா தேவ்நாத் உலகிற்கு வரவேற்கிறோம்! ✨", "subtitle": "நாம் ஒன்றாக உருவாக்கி புதுமைகள் செய்யலாம்! 🚀"}
+                "en": { "welcome": "Welcome to My Website!", "subtitle": "Thank you for visiting. Hope you enjoy your time here 😊"},
+                "si": { "welcome": "ඔයාගේ වෙබ් අඩවියට පිළිගනිමු!", "subtitle": "ඔයාගේ ගමනේ වේලාව සැලකීමෙන් ගත කරන්න 😊"},
+                "ta": { "welcome": "என் இணையதளத்திற்கு வரவேற்கிறேன்!", "subtitle": "உங்கள் நேரத்தை சிறப்பாக கழிக்கட்டும் 😊"}
 };
 
             document.getElementById("welcome").innerText = translations[lang].welcome;
@@ -55,10 +74,20 @@
                     document.getElementById('content-area').innerHTML = data;
                     document.querySelectorAll('#content-area div').forEach(div => div.style.display = "none");
                     document.getElementById(page).style.display = "block";
+                    if (page === "contact") {
+                        window.scrollTo({ top: document.getElementById('contact').offsetTop, behavior: 'smooth'});
+}
 });
 }
 
-        window.onload = function() {
+        function sendGmail() {
+            let gmailError = "Hello, I encountered an issue on your site. Please assist!";
+            window.location.href = `mailto:ransaramax4@gmail.com?subject=Website Issue&body=${encodeURIComponent(gmailError)}`;
+}
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+}window.onload = function() {
             document.body.classList.add("loaded"); // Enable smooth page transition
 };
     </script>
