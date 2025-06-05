@@ -10,23 +10,32 @@
 
     <!-- Header -->
     <div class="header">
-        <h1>✨ Welcome to Ransara Devnath's World! ✨</h1>
-        <p>Explore and connect with me for amazing projects, creative ideas, and tech innovations. Let's build something awesome together! 🚀</p>
+        <h1>✨ Ransara Devnath's World! ✨</h1>
+        <p>Let's create and innovate together! 🚀</p>
     </div>
 
-    <!-- Buttons Section -->
-    <div class="buttons">
+    <!-- Top Buttons -->
+    <div class="top-buttons">
+        <button onclick="toggleContact()" class="action-button">🔹 Button 1</button>
+        <button onclick="toggleContact()" class="action-button">🔹 Button 2</button>
+        <button onclick="toggleContact()" class="action-button">🔹 Button 3</button>
+    </div>
+
+    <!-- Floating Contact Us Button -->
+    <div id="contact-button" class="floating-button">
         <a href="contact.html" class="contact-button">📩 Contact Us</a>
-        <a href="https://wa.me/message/XQZHYHBQ3E47I1" class="contact-button">💬 Chat on WhatsApp</a>
-        <a href="https://github.com/ransara-devnath" class="contact-button">🐙 Visit GitHub Profile</a>
     </div>
 
     <script>
+        function toggleContact() {
+            var contactButton = document.getElementById("contact-button");
+            contactButton.classList.toggle("show");
+}
+
         window.onload = function() {
             document.body.classList.add("loaded"); // Enable smooth page transition
 };
     </script>
 
 </body>
-    </html>
-    
+</html>
