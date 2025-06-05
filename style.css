@@ -11,10 +11,10 @@ body {
 
 /* Animated Header */
 .header {
-    padding: 30px;
+    padding: 20px;
     background: linear-gradient(45deg, #238636, #58A6FF);
     color: white;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: bold;
     border-radius: 10px;
     animation: slideIn 1.5s ease-in-out;
@@ -25,18 +25,51 @@ body {
     100% { opacity: 1; transform: translateY(0);}
 }
 
-/* Button Styling */
+/* Top Buttons */
+.top-buttons {
+    margin: 20px 0;
+}
+
+.action-button {
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(45deg, #238636, #58A6FF);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background: linear-gradient(45deg, #58A6FF, #238636);
+    box-shadow: 0px 0px 8px rgba(255,255,255,0.3);
+}
+
+/* Floating Contact Us Button */
+.floating-button {
+    position: fixed;
+    right: -200px; /* Hide initially */
+    bottom: 20px;
+    transition: right 0.5s ease-in-out;
+}
+
+.floating-button.show {
+    right: 20px; /* Show when toggled */
+}
+
 .contact-button {
     display: inline-block;
     padding: 12px 18px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     color: white;
     background: linear-gradient(45deg, #238636, #58A6FF);
     text-decoration: none;
     border-radius: 8px;
     transition: 0.3s;
-    margin: 10px;
 }
 
 .contact-button:hover {
@@ -53,4 +86,4 @@ body {
 .loaded.page-transition {
     opacity: 1;
     transform: translateY(0);
-        }
+    }
