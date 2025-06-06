@@ -1,82 +1,45 @@
-function uploadSong() {
-    const songFile = document.getElementById("songInput").files[0];
-    const thumbnailFile = document.getElementById("thumbnailInput").files[0];
+const githubToken = "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";  // Replace this with your actual GitHub PAT
+const githubUsername = "ransara-devnath";
+const repoName = "Sonic-Ceylon-Official-";
 
-    if (!songFile ||!thumbnailFile) {
-        alert("Please select a song and a thumbnail!");
+async function loadSongs() {
+    const songList = document.getElementById("song-list");
+
+    const response = await fetch(`https://api.github.com/repos/${githubUsername}/${repoName}/contents/uploads/songs`);
+    const songs = await response.json();
+
+    songList.innerHTML = "";
+    songs.forEach(song => {
+        let songName = song.name.replace(".mp3", "");
+
+        let songItem = document.createElement("div");
+        songItem.className = "song-item";
+        songItem.innerHTML = `<p>${songName}</p>`;
+        songItem.onclick = () => openPlayer(song.download_url, songName);
+
+        songList.appendChild(songItem);
+});
+}
+
+function openPlayer(songUrl, songName) {
+    document.getElementById("player").innerHTML = `
+        <h2>${songName}</h2>
+        <audio controls>
+            <source src="${songUrl}" type="audio/mp3">
+        </audio>
+        <a href="${songUrl}" download="${songName}.mp3">
+            <button>⬇️ Download MP3</button>
+        </a>
+    `;
+}
+
+async function uploadSong() {
+    const songFile = document.getElementById("songInput").files[0];
+    const songName = document.getElementById("songName").value;
+
+    if (!songFile ||!songName) {
+        alert("Please fill all fields and select a song!");
         return;
 }
 
-    const formData = new FormData();
-    formData.append("song", songFile);
-    formData.append("thumbnail", thumbnailFile);
-    formData.append("songName", songFile.name); // Store song name for search
-
-    fetch("/upload", { method: "POST", body: formData})
-.then(response => response.json())
-.then(data => {
-        if (data.success) {
-            document.getElementById("songList").innerHTML += `
-                <div class="song-item" data-song-name="${songFile.name.toLowerCase()}">
-                    <img src="${data.thumbnailPath}" alt="Thumbnail">
-                    <audio controls>
-                        <source src="${data.songPath}" type="audio/mp3">
-                    </audio>
-                    <button onclick="downloadSong('${data.songPath}')">⬇️ Download</button>
-                </div>
-            `;
-}
-});
-}
-
-// 🔥 Search Function Fix
-function searchSong() {
-    let searchInput = document.getElementById("searchInput").value.toLowerCase();
-    let songs = document.querySelectorAll(".song-item");
-
-    songs.forEach(song => {
-        let songName = song.getAttribute("data-song-name");
-        song.style.display = songName.includes(searchInput)? "block": "none";
-});
-}
-
-// 🔥 Typing Animation Function
-const typingText = document.getElementById("typing-text");
-const messages = [
-    "🎧 Discover Music",
-    "📀 Download Hits",
-    "🎶 Feel the Rhythm",
-    "🔥 Non-Stop Vibes",
-    "💻 Developed with ❤️ by Ransara Devnath • 🇱🇰 Powered by SonicCeylon © 2025"
-];
-
-let messageIndex = 0;
-let charIndex = 0;
-let typingSpeed = 100;
-let erasingSpeed = 50;
-let delayBetweenTexts = 2000;
-
-function typeText() {
-    if (charIndex < messages[messageIndex].length) {
-        typingText.textContent += messages[messageIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeText, typingSpeed);
-} else {
-        setTimeout(eraseText, delayBetweenTexts);
-}
-}
-
-function eraseText() {
-    if (charIndex> 0) {
-        typingText.textContent = messages[messageIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(eraseText, erasingSpeed);
-} else {
-        messageIndex = (messageIndex + 1) % messages.length;
-        setTimeout(typeText, typingSpeed);
-}
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(typeText, typingSpeed);
-});
+    const filePath = `uploads/${songName}/${songName}.mp3`;
