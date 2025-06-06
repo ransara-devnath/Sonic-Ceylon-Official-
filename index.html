@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SonicCeylon Music</title>
+    <title>SonicCeylon - Home</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="loadSongs()">
 
-    <!-- Background Blur Wrapper -->
-    <div class="background-blur"></div>
+<header>
+    <img src="https://raw.githubusercontent.com/ransara-devnath/Sonic-Ceylon-Official-/main/logo.png"
+         alt="SonicCeylon Logo" id="site-logo">
+</header>
 
-    <!-- Main Content Wrapper -->
-    <div class="main-content">
-        <!-- Typing Text Animation -->
-        <h1 id="typing-text"></h1>
+<h2>🎵 Recently Uploaded Songs</h2>
+<input type="text" id="searchInput" placeholder="Search for songs...">
+<button onclick="searchSongs()">🔍 Search</button>
 
-        <!-- Search Bar -->
-        <input type="text" id="searchInput" placeholder="Search for songs...">
-        <button onclick="searchSong()">🔍 Search</button>
+<div id="song-list"></div>  
 
-        <!-- Upload Form -->
-        <input type="file" id="songInput" accept="audio/mp3">
-        <input type="file" id="thumbnailInput" accept="image/*">
-        <button onclick="uploadSong()" class="upload-animation">⬆️ Upload Song</button>
+<div id="player"></div>
 
-        <!-- Display Uploaded Songs -->
-        <div id="songList"></div>
+<footer>
+    <p>&copy; 2025 SonicCeylon. All rights reserved.</p>
+</footer>
 
-        <!-- Contact Us Link -->
-        <a href="contact.html" class="contact-link">📩 Contact Us</a>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
     </html>
-        
+    
