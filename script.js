@@ -6,7 +6,6 @@ async function searchSongs() {
 
     const response = await fetch(`https://api.github.com/repos/${githubRepo}/contents/uploads`);
     const songs = await response.json();
-
     songList.innerHTML = "";
     let found = false;
 
@@ -45,18 +44,8 @@ function openPlayer(songUrl, imageUrl, songName) {
     `;
 }
 
-function startDownload(songUrl, songName) {
-    let countdown = 10;
-    const downloadButton = document.querySelector("button");
-
-    const interval = setInterval(() => {
-        downloadButton.innerText = `⬇️ Download MP3 (${countdown}s)`;
-        countdown--;
-
-        if (countdown === 0) {
-            clearInterval(interval);
-            downloadButton.innerText = "⬇️ Click to Download";
-            downloadButton.onclick = () => window.location.href = songUrl;
-}
-}, 1000);
-}
+/* Auto-Type Error Reporting */
+window.onerror = function (message, source, lineno, colno, error) {
+    const emailBody = encodeURIComponent(`🚨 Site Error Detected!\n\nError: ${message}\nFile: ${source}\nLine: ${lineno}, Column: ${colno}\nDetails: ${error}`);
+    window.location.href = `mailto:ransaramax87@gmail.com?subject=Site Error Report&body=${emailBody}`;
+};
