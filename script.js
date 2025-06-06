@@ -1,8 +1,8 @@
 const githubRepo = "ransara-devnath/Sonic-Ceylon-Official-";
 
-// Remove looping text animation when clicked
-document.getElementById("looping-text").addEventListener("click", () => {
-    document.getElementById("looping-text").style.animation = "none";
+// Remove ticker animation when clicked anywhere on the site
+document.body.addEventListener("click", () => {
+    document.getElementById("ticker-animation").style.animation = "none";
 });
 
 async function searchSongs() {
@@ -39,7 +39,7 @@ async function searchSongs() {
 }
 
 function openPlayer(songUrl, imageUrl, songName) {
-document.getElementById("player").innerHTML = `
+    document.getElementById("player").innerHTML = `
         <img src="${imageUrl}" alt="Song Preview" width="200">
         <h2>${songName} (SonicCeylon)</h2>
         <audio controls id="audio-player">
