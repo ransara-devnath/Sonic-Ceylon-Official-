@@ -1,4 +1,4 @@
-const githubToken = "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";  // Replace this with your actual GitHub PAT
+const githubToken = "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";  // Add your actual GitHub token here
 const githubUsername = "ransara-devnath";
 const repoName = "Sonic-Ceylon-Official-";
 
@@ -38,8 +38,46 @@ async function uploadSong() {
     const songName = document.getElementById("songName").value;
 
     if (!songFile ||!songName) {
-        alert("Please fill all fields and select a song!");
+        alert("Please enter a song name and select a file!");
         return;
 }
 
     const filePath = `uploads/${songName}/${songName}.mp3`;
+    uploadToGitHub(songFile, filePath);
+}
+
+async function uploadToGitHub(file, filePath) {
+    const reader = new FileReader();
+    reader.readAsArrayBuffer(file);
+
+    reader.onload = async function () {
+        const base64File = btoa(String.fromCharCode(...new Uint8Array(reader.result)));
+
+        const url = `https://api.github.com/repos/${githubUsername}/${repoName}/contents/${filePath}`;
+
+        const response = await fetch(url, {
+            method: "PUT",
+            headers: {
+                "Authorization": `token ${githubToken}`,
+                "Content-Type": "application/json"
+},
+            body: JSON.stringify({
+                message: `Uploading ${file.name}`,
+                content: base64File
+})
+});
+
+        if (response.ok) {
+            alert(`"${file.name}" uploaded successfully!`);
+} else {
+            alert("Upload failed! Check API permissions.");
+}
+};
+}
+
+function searchSongs() {
+    let searchInput = document.getElementById("searchInput").value.toLowerCase();
+    let songList = document.getElementById("song-list");
+
+    songList.innerHTML = `<p>Searching for "${searchInput}"...</p>`;
+    }
