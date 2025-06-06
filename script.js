@@ -1,4 +1,4 @@
-const githubToken = "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";  // Add your actual GitHub token here
+const githubToken = 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;  // Add your actual GitHub token here
 const githubUsername = "ransara-devnath";
 const repoName = "Sonic-Ceylon-Official-";
 
