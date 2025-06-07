@@ -1,0 +1,69 @@
+/* Apply Gradient Theme */
+body {
+    background: linear-gradient(45deg, #001f3f, #6a0dad, #1a3d1a);
+}
+
+/* Site Logo */
+#site-logo {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+#site-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Search Bar & Button Adjustment */
+#search-section {
+    text-align: center;
+    margin-top: 20px;
+}
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    display: block; /* Makes search bar full width */
+    margin: 0 auto;
+}
+
+/* Search Button - Positioned Below Search Bar */
+button {
+    background: linear-gradient(45deg, #0088cc, #005b99);
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    display: block; /* Moves button below */
+    margin: 10px auto;
+}
+
+/* Music Player Animation */
+#player {
+    animation: none; /* Default state */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}
+
+/* Ticker Animation */
+#ticker-animation {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    animation: tickerMove 8s linear infinite;
+    cursor: pointer; /* Enables clickable interaction */
+}
+
+@keyframes tickerMove {
+    0% { transform: translateX(-100%);}
+    100% { transform: translateX(100%);}
+}
