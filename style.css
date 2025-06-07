@@ -1,0 +1,96 @@
+/* Apply Gradient Theme */
+body {
+    background: linear-gradient(45deg, #001f3f, #6a0dad, #1a3d1a);
+}
+
+/* Site Logo */
+#site-logo {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#site-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Search Bar */
+#search-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Search Button with Animation */
+button {
+    background: linear-gradient(45deg, #0088cc, #005b99);
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    animation: telegramBounce 2s infinite;
+}
+
+@keyframes telegramBounce {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}
+
+/* Searching Animation */
+@keyframes searchingGlow {
+    0% { box-shadow: 0px 0px 10px #0088cc;}
+    50% { box-shadow: 0px 0px 20px #005b99;}
+    100% { box-shadow: 0px 0px 10px #0088cc;}
+}
+
+.searching {
+    animation: searchingGlow 1s infinite alternate;
+}
+
+/* Music Player */
+#custom-player {
+    text-align: center;
+    background: linear-gradient(45deg, #222, #444);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    width: 80%;
+    max-width: 400px;
+    margin: auto;
+}
+
+#player-image {
+    width: 200px;
+    border-radius: 10px;
+}
+
+#play-pause, #prev-song, #next-song {
+    background: #0088cc;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#play-pause:hover, #prev-song:hover, #next-song:hover {
+    background: #005b99;
+}
+
+/* Player Animation */
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SonicCeylon - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadSongs()">
+
+<!-- Header with Logo -->
+<header>
+    <img src="https://raw.githubusercontent.com/ransara-devnath/Ransara-Dewnath-/refs/heads/main/IMG-20250606-WA0003.jpg"
+         alt="Site Logo" id="site-logo">
+</header>
+
+<!-- Search Section -->
+<div id="search-section">
+    <input type="text" id="searchInput" placeholder="Search for a song...">
+    <button onclick="searchSongs()">🔍 Search</button>
+</div>
+
+<!-- Songs List -->
+<div id="song-list"></div>
+
+<!-- Advanced Player Section -->
+<div id="custom-player">
+    <img id="player-image" src="" alt="Song Cover">
+    <h2 id="player-title"></h2>
+    <audio id="audio-player" controls>
+        <source id="player-source" src="" type="audio/mp3">
+    </audio>
+    <button id="prev-song">⏮️</button>
+    <button id="play-pause">▶️</button>
+    <button id="next-song">⏭️</button>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>Developed by <strong>Ransara Devnath</strong> | Copyright ©️ 2025</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
