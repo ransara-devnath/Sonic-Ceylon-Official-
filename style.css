@@ -1,0 +1,57 @@
+/* Apply Gradient Theme */
+body {
+    background: linear-gradient(45deg, #001f3f, #6a0dad, #1a3d1a);
+}
+
+/* Site Logo */
+#site-logo {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#site-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Search Bar */
+#search-section {
+text-align: center;
+    margin-top: 20px;
+}
+
+#searchInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Search Button with Animation */
+button {
+    background: linear-gradient(45deg, #0088cc, #005b99);
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 8px;
+    animation: telegramBounce 2s infinite;
+}
+
+@keyframes telegramBounce {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}
+
+/* Music Player Animation _/
+#player {
+    animation: none; /_ Default state */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}
+
