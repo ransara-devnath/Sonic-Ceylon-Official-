@@ -11,36 +11,6 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-#search-section {
-    margin-top: 20px;
-    position: relative;
-    z-index: 100;
-}
-
-#searchInput,.telegram-button {
-    position: relative;
-    z-index: 200;
-}
-
-button {
-    background-color: #0088cc;
-    color: white;
-    font-size: 18px;
-    padding: 12px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-}
-
-button:hover {
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
 /* Music Player Glow Animation */
 @keyframes glow {
     0% { filter: drop-shadow(0 0 5px red);}
@@ -54,3 +24,27 @@ button:active {
 .glow-active {
     animation: glow 3s infinite alternate;
 }
+
+/* RGB Color Loop for Footer Text */
+@keyframes rgbLoop {
+    0% { color: red;}
+    20% { color: orange;}
+    40% { color: yellow;}
+    60% { color: green;}
+    80% { color: blue;}
+    100% { color: violet;}
+}
+
+/* Scrolling Text Effect */
+@keyframes scrollText {
+    0% { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
+}
+
+#footer-text {
+    animation: rgbLoop 2s infinite alternate, scrollText 5s linear infinite;
+    position: absolute;
+    left: 0;
+    right: 100%;
+    white-space: nowrap;
+    }
