@@ -1,0 +1,73 @@
+body {
+    background: linear-gradient(45deg, #001f3f, #6a0dad, #1a3d1a);
+    text-align: center;
+}
+
+/* Welcome Note */
+#welcome-note {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-align: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Fix Search Button Overlapping Issue */
+#search-section {
+    position: relative;
+    z-index: 100;
+}
+
+#searchInput,.telegram-button {
+    position: relative;
+    z-index: 200;
+}
+
+/* Restore Telegram bounce animation */
+@keyframes telegramBounce {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.1);}
+    100% { transform: scale(1);}
+}
+.telegram-button {
+    animation: telegramBounce 1.5s infinite;
+}
+
+/* Music Player Animation */
+@keyframes pulse {
+    0% { transform: scale(1);}
+    50% { transform: scale(1.05);}
+    100% { transform: scale(1);}
+}
+
+/* Footer looping RGB text */
+@keyframes rgbLoop {
+    0% { color: red;}
+    20% { color: orange;}
+    40% { color: yellow;}
+    60% { color: green;}
+    80% { color: blue;}
+    100% { color: violet;}
+}
+
+#footer-text {
+    animation: rgbLoop 2s infinite alternate, scrollText 5s linear infinite;
+    position: absolute;
+    left: 0;
+    right: 100%;
+    white-space: nowrap;
+}
+
+/* Text scrolling effect */
+@keyframes scrollText {
+    0% { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
+}
