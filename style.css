@@ -1,0 +1,85 @@
+body {
+background: linear-gradient(45deg, #001f3f, #6a0dad, #1a3d1a);
+    text-align: center;
+}
+
+#site-logo {
+    width: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#search-section {
+    margin-top: 20px;
+    position: relative;
+    z-index: 100;
+}
+
+#searchInput,.telegram-button {
+    position: relative;
+    z-index: 200;
+}
+
+button {
+    background-color: #0088cc;
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Remove Telegram bounce animation */
+.telegram-button {
+    animation: none;
+}
+
+/* Music Player Glow Animation */
+@keyframes glow {
+    0% { filter: drop-shadow(0 0 5px red);}
+    20% { filter: drop-shadow(0 0 5px orange);}
+    40% { filter: drop-shadow(0 0 5px yellow);}
+    60% { filter: drop-shadow(0 0 5px green);}
+    80% { filter: drop-shadow(0 0 5px blue);}
+    100% { filter: drop-shadow(0 0 5px violet);}
+}
+
+.glow-active {
+    animation: glow 3s infinite alternate;
+}
+
+/* Footer looping RGB text */
+@keyframes rgbLoop {
+    0% { color: red;}
+    20% { color: orange;}
+    40% { color: yellow;}
+    60% { color: green;}
+    80% { color: blue;}
+    100% { color: violet;}
+}
+
+#footer-text {
+    animation: rgbLoop 2s infinite alternate, scrollText 5s linear infinite;
+    position: absolute;
+    left: 0;
+    right: 100%;
+    white-space: nowrap;
+}
+
+/* Text scrolling effect */
+@keyframes scrollText {
+    0% { transform: translateX(100%);}
+    100% { transform: translateX(-100%);}
+}
