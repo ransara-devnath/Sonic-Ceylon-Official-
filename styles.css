@@ -1,0 +1,110 @@
+body {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #161b22;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: #58a6ff;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card,.apk-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 15px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.apk-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.apk-card h3 {
+  color: #58a6ff;
+}
+
+.button-download {
+  background-color: #238636;
+  padding: 10px 16px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Search Box */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  max-width: 400px;
+}
+
+.search-box input {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #30363d;
+  background-color: #0d1117;
+  color: #c9d1d9;
+  border-radius: 6px 0 0 6px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #58a6ff;
+  box-shadow: 0 0 8px #58a6ff66;
+  transition: all 0.3s ease;
+}
+
+.search-box button {
+  padding: 10px 18px;
+  background-color: #238636;
+  color: white;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1);}
+  50% { transform: scale(1.05);}
+  100% { transform: scale(1);}
+}
+
+.search-box button:hover {
+  animation: pulse 0.4s ease-in-out;
+  background-color: #2ea043;
+}
+
+/* Developer Name Footer */
+.developer-name {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #58a6ff, #8b5cf6, #f43f5e);
+  color: white;
+  padding: 10px 0
